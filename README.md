@@ -125,8 +125,7 @@ openssl x509 -in /etc/my.cnf.d/certs/server.crt -subject -noout
 
 **Block 2 — Certificate validity and identity**
 ```bash
-openssl x509 -in /etc/my.cnf.d/certs/server.crt -text -noout | \
-  grep -iE "subject|issuer|not before|not after|signature algorithm|serial"
+openssl x509 -in /etc/my.cnf.d/certs/server.crt -text -noout | grep -iE "subject|issuer|not before|not after|signature algorithm|serial"
 ```
 Looking for:
 - CN is your server hostname or organisation name
