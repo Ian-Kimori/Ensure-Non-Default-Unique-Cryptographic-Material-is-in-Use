@@ -158,6 +158,8 @@ openssl x509 -in /etc/my.cnf.d/certs/ca.crt -enddate -noout
 ```bash
 # Run on each node and compare outputs — they must all be different
 openssl x509 -in /etc/my.cnf.d/certs/server.crt -fingerprint -sha256 -noout
+```
+```bash
 openssl x509 -in /etc/my.cnf.d/certs/server.crt -serial -noout
 ```
 - Same fingerprint on multiple nodes → ❌ FAIL
@@ -170,16 +172,24 @@ openssl x509 -in /etc/my.cnf.d/certs/server.crt -serial -noout
 ```
 Is the cert auto-generated?          YES → FAIL, stop here
                                       NO → continue
+```
+```
 Is the cert expired?                 YES → FAIL, stop here
                                       NO → continue
+```
+```
 Is the CN your own identity?          NO → FAIL, stop here
                                      YES → continue
+```
+```
 Is the key 2048 bit or stronger?      NO → FAIL, stop here
                                      YES → continue
+```
+```
 Is the CA auto-generated?            YES → FAIL, stop here
                                       NO → continue
+```
+```
 Is the cert unique per Galera node?   NO → FAIL, stop here
                                      YES → PASS
 ```
-
-Paste the output of all five blocks and I will give you the definitive verdict.
