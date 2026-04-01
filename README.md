@@ -16,6 +16,8 @@ SHOW VARIABLES LIKE '%ssl%';
 | `have_openssl = YES` | ✅ PASS |
 | `have_ssl = NO` or `DISABLED` | ❌ FAIL |
 
+Look for ssl_cert, ssl_key, ssl_ca variable values — these tell you the exact paths.
+
 **1b. SSL actively in use**
 ```sql
 SHOW STATUS LIKE 'Ssl_cipher';
